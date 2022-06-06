@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css">
   <title>Music Search</title>
 </head>
+
 <body>
+  <!-- <div id="tunes"></div> -->
+
+  <h1>Music Site</h1>
+  <form action="javascript:submit()" >
+    <fieldset>
+      <label><input type="text" name="search" placeholder="Search for Artist" required /></label>
+      <input type="submit" value="Submit" />
+    </fieldset>
+
+  </form>
+
+  <audio controls>
+    <source src="" type="audio">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="tunes"></div>
+
 </body>
+
 </html>

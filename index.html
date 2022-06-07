@@ -21,11 +21,11 @@
     </fieldset>
   </form> -->
 
-  <label><input type="text" name="search" id="search" placeholder="Search for Artist" required /></label>
+  <label><input type="text" name="search" id="search" placeholder="Search for Artist" minlength="1" required /></label>
   <button id="submit">Submit</button>
 
-  <br/>
-  <br/>
+  <br />
+  <br />
 
   <div>
     <audio controls>
@@ -33,6 +33,8 @@
       Your browser does not support the audio element.
     </audio>
   </div>
+
+  <br />
 
   <div id="tunes"></div>
 

@@ -49,14 +49,14 @@
 
 const itunesInfo = document.querySelector('#tunes')
 
-// let playAudio = document.querySelector('')
-
 let form = document.getElementById("form")
-// console.log(form)
 
 let submitButton = document.getElementById("submit")
 
 let searchVal = document.getElementById("search")
+
+let playAudio = document.getElementsByTagName("audio")
+
 
 let itunesUrlSearch = "https://itunes.apple.com/search?term="
 

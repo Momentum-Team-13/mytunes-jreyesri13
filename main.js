@@ -48,10 +48,35 @@ function buildItunes(itunesData) {
 
 }
 
+let form = document.getElementById("form")
+// console.log(form)
 
-let submit = () => {
-    let values = ""
-    values += document.getElementsByName("search")[0].value
-    console.log(1)
-    console.log(values)
-}
+
+let searchVal = document.getElementById("search")
+
+
+// form.addEventListener('submit', (event) => {
+
+// }
+
+
+form.addEventListener("click", (event) => {
+    console.log(searchVal.value)
+})
+
+
+
+// form.addEventListener('submit', (event) => {
+
+     // event.preventDefault();
+
+// })
+
+
+
+// let submit = () => {
+//     let values = ""
+//     values += document.getElementsByName("search")[0].value
+//     console.log(1)
+//     console.log(values)
+// }

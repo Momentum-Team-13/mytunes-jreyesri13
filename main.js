@@ -1,8 +1,8 @@
 
 
-let itunesUrl = "https://itunes.apple.com/search?term=jack+johnson&limit=5"
+// let itunesUrl = "https://itunes.apple.com/search?term=jack+johnson&limit=5"
 
-const itunesInfo = document.querySelector('#tunes')
+
 
 // fetch(itunesUrl, {
 //     method: 'GET',
@@ -47,6 +47,9 @@ const itunesInfo = document.querySelector('#tunes')
 // // itunesElement.appendChild(nameElement)
 // }
 
+const itunesInfo = document.querySelector('#tunes')
+
+// let playAudio = document.querySelector('')
 
 let form = document.getElementById("form")
 // console.log(form)
@@ -57,7 +60,10 @@ let searchVal = document.getElementById("search")
 
 let itunesUrlSearch = "https://itunes.apple.com/search?term="
 
-submitButton.addEventListener('click', (event) => {
+// submitButton.addEventListener('click', (event) => {
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
 
     itunesInfo.innerHTML = ""
 

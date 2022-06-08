@@ -1,3 +1,16 @@
 fieldset {
     border: none;
 }
+
+
+
+.divider {
+    /* border-bottom: 1px solid #888989; */
+    background-color: black;
+    border: 0;
+    margin: 5px 5px;
+    /* clear: right; */
+    height: 3px;
+  }
+
+  

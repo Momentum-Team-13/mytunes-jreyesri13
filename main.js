@@ -22,8 +22,11 @@ form.addEventListener('submit', (event) => {
     // console.log(searchVal.value)
     let userInput = searchVal.value
     //console.log(userInput)
+    let formatInput = userInput.toLowerCase().replaceAll(" ", "+")
+    console.log(formatInput)
+    let entitySearch = "&entity=song"
     let limitSearch = "&limit=5"
-    let userSearch = itunesUrlSearch + `${userInput}` + limitSearch
+    let userSearch = itunesUrlSearch + `${formatInput}` + entitySearch + limitSearch
     console.log(userSearch)
 
 
@@ -56,7 +59,7 @@ form.addEventListener('submit', (event) => {
 
 
             let imageElement = document.createElement('img')
-            imageElement.src = item.artworkUrl60
+            imageElement.src = item.artworkUrl100
             imageElement.alt = 'Artwork of ' + `${item.artistName}`
             itunesElement.appendChild(imageElement)
 
@@ -69,6 +72,11 @@ form.addEventListener('submit', (event) => {
             let artistElement = document.createElement('p')
             artistElement.innerText = `${item.artistName}`
             itunesElement.appendChild(artistElement)
+
+            let audioTest = document.createElement("audio")
+            audioTest.controls = true
+            audioTest.src = item.previewUrl
+            itunesElement.appendChild(audioTest)
 
         }
 

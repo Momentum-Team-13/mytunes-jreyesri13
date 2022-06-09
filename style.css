@@ -1,3 +1,7 @@
+body {
+    background-color: #859aaf;
+}
+
 h1 {
     text-align: center;
 }
@@ -27,8 +31,29 @@ audio {
     justify-content: center;
 }
 
+#tunes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+    
+}
 
+.tunesDiv {
+    border: 2px solid black;
+    margin: 2px;
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    padding-top: 50px;
+    background-color: #e7eeef; 
+}
 
+img {
+    width: 40%;
+    /* height: 125px; */
+}
 
 
 .divider {

@@ -67,7 +67,7 @@ form.addEventListener('submit', (event) => {
                     console.log(item.trackName)
 
                     let itunesElement = document.createElement('div')
-                    // profileElement.classList.add('topStyle')
+                    itunesElement.classList.add('tunesDiv')
 
                     let imageElement = document.createElement('img')
                     imageElement.src = item.artworkUrl100

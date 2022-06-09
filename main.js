@@ -43,7 +43,9 @@ form.addEventListener('submit', (event) => {
             console.log("Response from itunes API: ", data)
             // console log the data
             buildUser(data)
-
+        })
+        .catch(err => {
+            window.alert("Error!")
         })
 
 })
@@ -81,8 +83,7 @@ function buildUser(itunesData) {
         imageElement.addEventListener("click", (event) => {
             let playAudio = document.querySelector('audio')
             console.log(item.trackName)
-            playAudio.id = `audio=player`
-            playAudio.controls = `controls`
+            playAudio.controls = true //`controls`
             playAudio.src = `${item.previewUrl}`
             playAudio.type = `audio`
             // itunesElement.appendChild(audioTest)
@@ -90,5 +91,5 @@ function buildUser(itunesData) {
 
         itunesInfo.appendChild(itunesElement)
     }
-    
+
 }

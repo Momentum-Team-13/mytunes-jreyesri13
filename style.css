@@ -1,6 +1,33 @@
-/* fieldset {
-    border: none;
-} */
+h1 {
+    text-align: center;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    
+}
+
+input {
+    width: 250px;
+    margin-right: 5px;
+}
+
+#audioDiv {
+    display: flex;
+    justify-content: center;
+}
+
+audio {
+    width: 350px;
+}
+
+#nowPlaying {
+    display: flex;
+    justify-content: center;
+}
+
+
 
 
 

@@ -6,16 +6,14 @@ const submitButton = document.getElementById("submit")
 
 const itunesInfo = document.getElementById("tunes") //querySelector('#tunes')
 
-// let playAudio = document.getElementsByTagName("audio")
-
 // let playAudio = document.querySelector('audio')
-
 
 let itunesUrlSearch = "https://itunes.apple.com/search?term="
 
 // submitButton.addEventListener('click', (event) => {
 
 form.addEventListener('submit', (event) => {
+    
     event.preventDefault()
 
     itunesInfo.innerHTML = ""
@@ -24,7 +22,7 @@ form.addEventListener('submit', (event) => {
     let userInput = searchVal.value
     //console.log(userInput)
     let formatInput = userInput.toLowerCase().replaceAll(" ", "+")
-    console.log(formatInput)
+    // console.log(formatInput)
     let entitySearch = "&entity=song"
     let limitSearch = "&limit=5"
     let userSearch = itunesUrlSearch + `${formatInput}` + entitySearch + limitSearch

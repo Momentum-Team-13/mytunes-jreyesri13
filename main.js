@@ -1,11 +1,10 @@
+const form = document.getElementById("form")
 
-const itunesInfo = document.querySelector('#tunes')
+const searchVal = document.getElementById("search")
 
-let form = document.getElementById("form")
+const submitButton = document.getElementById("submit")
 
-let submitButton = document.getElementById("submit")
-
-let searchVal = document.getElementById("search")
+const itunesInfo = document.getElementById("tunes") //querySelector('#tunes')
 
 // let playAudio = document.getElementsByTagName("audio")
 

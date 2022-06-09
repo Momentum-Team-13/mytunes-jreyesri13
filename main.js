@@ -19,7 +19,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault()
 
     itunesInfo.innerHTML = ""
-    playing.innerText = ""
+    playing.innerHTML = ""
 
     // console.log(searchVal.value)
     let userInput = searchVal.value
@@ -111,6 +111,9 @@ form.addEventListener('submit', (event) => {
 
 })
 
+
+
+//Need to create a seperate function to reference the playing div tag component.
 
 // function buildUser(itunesData) {
 //     //console.log(itunesData.results[0].trackName)

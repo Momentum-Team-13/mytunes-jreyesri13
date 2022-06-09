@@ -27,7 +27,7 @@ form.addEventListener('submit', (event) => {
     let formatInput = userInput.toLowerCase().replaceAll(" ", "+")
     // console.log(formatInput)
     let entitySearch = "&entity=song"
-    let limitSearch = "&limit=5"
+    let limitSearch = "&limit=24"
     let userSearch = itunesUrlSearch + `${formatInput}` + entitySearch + limitSearch
     console.log(userSearch)
 
@@ -77,6 +77,7 @@ form.addEventListener('submit', (event) => {
 
                     let songElement = document.createElement('p')
                     songElement.innerText = `${item.trackName}`
+                    songElement.classList.add('songName')
                     itunesElement.appendChild(songElement)
 
 

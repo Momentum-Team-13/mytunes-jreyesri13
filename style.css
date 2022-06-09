@@ -55,3 +55,7 @@ img {
     width: 40%;
     /* height: 125px; */
 }
+
+.songName {
+    font-weight: bold;
+}

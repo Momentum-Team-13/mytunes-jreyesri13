@@ -115,6 +115,19 @@ form.addEventListener('submit', (event) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Need to create a seperate function to reference the playing div tag component.
 
 // function buildUser(itunesData) {

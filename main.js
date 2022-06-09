@@ -52,13 +52,11 @@ form.addEventListener('submit', (event) => {
 function buildUser(itunesData) {
     //console.log(itunesData.results[0].trackName)
 
-    // let itunesElement = document.createElement('div')
-    // profileElement.classList.add('topStyle')
-
-    for (item of itunesData.results) {
+    for (let item of itunesData.results) {
         console.log(item.trackName)
 
         let itunesElement = document.createElement('div')
+        // profileElement.classList.add('topStyle')
 
         let imageElement = document.createElement('img')
         imageElement.src = item.artworkUrl100

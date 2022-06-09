@@ -93,6 +93,7 @@ form.addEventListener('submit', (event) => {
                         let playAudio = document.querySelector('audio')
                         console.log(item.trackName)
                         playAudio.controls = true //`controls`
+                        playAudio.autoplay = true
                         playAudio.src = `${item.previewUrl}`
                         playAudio.type = `audio`
                         yesReturn.innerText = "Now playing: " + `${item.trackName}` + " by " + `${item.artistName}`

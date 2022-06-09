@@ -4,6 +4,8 @@ const searchVal = document.getElementById("search")
 
 const submitButton = document.getElementById("submit")
 
+const playing = document.getElementById("nowPlaying")
+
 const itunesInfo = document.getElementById("tunes") //querySelector('#tunes')
 
 // let playAudio = document.querySelector('audio')
@@ -17,6 +19,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault()
 
     itunesInfo.innerHTML = ""
+    playing.innerText = ""
 
     // console.log(searchVal.value)
     let userInput = searchVal.value
@@ -39,10 +42,68 @@ form.addEventListener('submit', (event) => {
             // put the response in JSON format
         })
         .then(function (data) {
+
+            if (data.results.length < 1) {
+                let noReturn = document.createElement('div')
+                noReturn.innerText = "No results found!"
+                playing.appendChild(noReturn)
+            }
+
+            let yesReturn = document.createElement('div')
+            yesReturn.innerText = "Click on an Album Cover to Play"
+            playing.appendChild(yesReturn)
+
             // data refers to what the above promise returned (response.json())
             console.log("Response from itunes API: ", data)
             // console log the data
             buildUser(data)
+
+
+
+            function buildUser(itunesData) {
+                //console.log(itunesData.results[0].trackName)
+
+                for (let item of itunesData.results) {
+                    console.log(item.trackName)
+
+                    let itunesElement = document.createElement('div')
+                    // profileElement.classList.add('topStyle')
+
+                    let imageElement = document.createElement('img')
+                    imageElement.src = item.artworkUrl100
+                    imageElement.alt = 'Artwork of ' + `${item.artistName}`
+                    itunesElement.appendChild(imageElement)
+
+
+                    let songElement = document.createElement('p')
+                    songElement.innerText = `${item.trackName}`
+                    itunesElement.appendChild(songElement)
+
+
+                    let artistElement = document.createElement('p')
+                    artistElement.innerText = `${item.artistName}`
+                    itunesElement.appendChild(artistElement)
+
+                    // let audioTest = document.createElement("audio")
+                    // audioTest.controls = true
+                    // audioTest.src = item.previewUrl
+                    // itunesElement.appendChild(audioTest)
+
+                    imageElement.addEventListener("click", (event) => {
+                        let playAudio = document.querySelector('audio')
+                        console.log(item.trackName)
+                        playAudio.controls = true //`controls`
+                        playAudio.src = `${item.previewUrl}`
+                        playAudio.type = `audio`
+                        yesReturn.innerText = "Now playing: " + `${item.trackName}` + " by " + `${item.artistName}`
+                        // itunesElement.appendChild(audioTest)
+                    })
+
+                    itunesInfo.appendChild(itunesElement)
+                }
+
+            }
+
         })
         .catch(err => {
             window.alert("Error!")
@@ -51,45 +112,46 @@ form.addEventListener('submit', (event) => {
 })
 
 
-function buildUser(itunesData) {
-    //console.log(itunesData.results[0].trackName)
+// function buildUser(itunesData) {
+//     //console.log(itunesData.results[0].trackName)
 
-    for (let item of itunesData.results) {
-        console.log(item.trackName)
+//     for (let item of itunesData.results) {
+//         console.log(item.trackName)
 
-        let itunesElement = document.createElement('div')
-        // profileElement.classList.add('topStyle')
+//         let itunesElement = document.createElement('div')
+//         // profileElement.classList.add('topStyle')
 
-        let imageElement = document.createElement('img')
-        imageElement.src = item.artworkUrl100
-        imageElement.alt = 'Artwork of ' + `${item.artistName}`
-        itunesElement.appendChild(imageElement)
-
-
-        let songElement = document.createElement('p')
-        songElement.innerText = `${item.trackName}`
-        itunesElement.appendChild(songElement)
+//         let imageElement = document.createElement('img')
+//         imageElement.src = item.artworkUrl100
+//         imageElement.alt = 'Artwork of ' + `${item.artistName}`
+//         itunesElement.appendChild(imageElement)
 
 
-        let artistElement = document.createElement('p')
-        artistElement.innerText = `${item.artistName}`
-        itunesElement.appendChild(artistElement)
+//         let songElement = document.createElement('p')
+//         songElement.innerText = `${item.trackName}`
+//         itunesElement.appendChild(songElement)
 
-        // let audioTest = document.createElement("audio")
-        // audioTest.controls = true
-        // audioTest.src = item.previewUrl
-        // itunesElement.appendChild(audioTest)
 
-        imageElement.addEventListener("click", (event) => {
-            let playAudio = document.querySelector('audio')
-            console.log(item.trackName)
-            playAudio.controls = true //`controls`
-            playAudio.src = `${item.previewUrl}`
-            playAudio.type = `audio`
-            // itunesElement.appendChild(audioTest)
-        })
+//         let artistElement = document.createElement('p')
+//         artistElement.innerText = `${item.artistName}`
+//         itunesElement.appendChild(artistElement)
 
-        itunesInfo.appendChild(itunesElement)
-    }
+//         // let audioTest = document.createElement("audio")
+//         // audioTest.controls = true
+//         // audioTest.src = item.previewUrl
+//         // itunesElement.appendChild(audioTest)
 
-}
+//         imageElement.addEventListener("click", (event) => {
+//             let playAudio = document.querySelector('audio')
+//             console.log(item.trackName)
+//             playAudio.controls = true //`controls`
+//             playAudio.src = `${item.previewUrl}`
+//             playAudio.type = `audio`
+//             yesReturn.innerText = "Now playing: " + `${item.trackName}` + " by " + `${item.artistName}`
+//             // itunesElement.appendChild(audioTest)
+//         })
+
+//         itunesInfo.appendChild(itunesElement)
+//     }
+
+// }

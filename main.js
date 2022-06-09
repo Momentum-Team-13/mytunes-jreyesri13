@@ -18,8 +18,8 @@ form.addEventListener('submit', (event) => {
 
     event.preventDefault()
 
-    itunesInfo.innerHTML = ""
     playing.innerHTML = ""
+    itunesInfo.innerHTML = ""
 
     // console.log(searchVal.value)
     let userInput = searchVal.value

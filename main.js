@@ -7,7 +7,9 @@ let submitButton = document.getElementById("submit")
 
 let searchVal = document.getElementById("search")
 
-let playAudio = document.getElementsByTagName("audio")
+// let playAudio = document.getElementsByTagName("audio")
+
+// let playAudio = document.querySelector('audio')
 
 
 let itunesUrlSearch = "https://itunes.apple.com/search?term="
@@ -73,10 +75,22 @@ form.addEventListener('submit', (event) => {
             artistElement.innerText = `${item.artistName}`
             itunesElement.appendChild(artistElement)
 
-            let audioTest = document.createElement("audio")
-            audioTest.controls = true
-            audioTest.src = item.previewUrl
-            itunesElement.appendChild(audioTest)
+            // let audioTest = document.createElement("audio")
+            // audioTest.controls = true
+            // audioTest.src = item.previewUrl
+            // itunesElement.appendChild(audioTest)
+
+            imageElement.addEventListener("click", (event) => {
+                let playAudio = document.querySelector('audio')
+                console.log(item.trackName)
+                playAudio.id = `audio=player`
+                playAudio.controls = `controls`
+                playAudio.src = `${item.previewUrl}`
+                playAudio.type = `audio`
+            // itunesElement.appendChild(audioTest)
+
+
+            })
 
         }
 
